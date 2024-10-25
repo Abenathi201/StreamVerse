@@ -4,12 +4,14 @@ import { Link } from 'react-router-dom';
 import "./Card.css";
 
 const Card = ({ media }) => {
+  const mediaId = media.type === 'movies' ? media.movie_id : media.series_id;
+
   return (
     <div className="card">
         <div className="img">
-          <Link to={`movies/${media.media_id}`}>
-            <img src={media.image_url} alt={media.title} />
-          </Link>
+        <Link to={`/${media.type}/${mediaId}`}>
+          <img src={media.image_url} alt={media.title} />
+        </Link>
         </div>
 
         <div className="mov-details flex justify-between my-2">

@@ -27,7 +27,7 @@ const Movies = () => {
       <div className="card-container flex justify-center space-x-12 flex-wrap gap-y-10">
         {movies.length > 0 ? (
           movies.map((movie) => (
-            <Card key={movie.movie_id} media={movie} />
+            <Card key={movie.movie_id} media={{ ...movie, type: 'movies' }} />
           ))
         ) : (
           <div>Loading ...</div>

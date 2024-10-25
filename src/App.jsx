@@ -22,7 +22,6 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/media" element={<Media />} />
-        <Route path="/movies/:id" element={<SingleMedia />} />
         <Route path="/user-profile/" element={<Profile />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/series" element={<Series />} />
@@ -31,6 +30,11 @@ const App = () => {
         <Route path="/kids" element={<Kids />} />
         <Route path="/reality" element={<Reality />} />
         <Route path="/standup" element={<StandUp />} />
+
+        {/* Single View */}
+        <Route path="/movies/:id" element={<SingleMedia type="movies" />} />
+        <Route path="/series/:id" element={<SingleMedia type="series" />} />
+        <Route path="/animations/:id" element={<SingleMedia type="animations" />} />
       </Routes>
     </div>
   )

@@ -23,7 +23,7 @@ const Series = () => {
     <div className="card-container flex justify-center space-x-12 flex-wrap gap-y-10">
       {series.length > 0 ? (
         series.map((tvShow) => (
-          <Card key={tvShow.series_id} media={tvShow} />
+          <Card key={tvShow.series_id} media={{ ...tvShow, type: 'series' }} />
         ))
       ) : (
         <div>Loading ...</div>
