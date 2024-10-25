@@ -3,14 +3,14 @@ import { useParams } from 'react-router-dom';
 import { fetchData } from '../utils';
 
 const SingleMedia = () => {
-  const { id } = useParams(); // Get the media_id from the URL
-  const [movie, setMovie] = useState(null); // State to hold movie data
-  const [loading, setLoading] = useState(true); // Loading state
+  const { id } = useParams();
+  const [movie, setMovie] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchMovie = async () => {
       try {
-        const response = await fetchData(`/movies/${id}`); // Adjust the API endpoint to fetch the movie details
+        const response = await fetchData(`/movies/${id}`);
         const data = await response.json();
         console.log(data);
         
@@ -26,11 +26,11 @@ const SingleMedia = () => {
   }, [id]);
 
   if (loading) {
-    return <div>Loading...</div>; // Display loading state
+    return <div>Loading...</div>;
   }
 
   if (!movie) {
-    return <div>No movie found.</div>; // Handle case where no movie is found
+    return <div>No movie found.</div>;
   }
 
   return (
@@ -38,8 +38,6 @@ const SingleMedia = () => {
       <h1>{movie.title}</h1>
       <img src={movie.image_url} alt={movie.title} />
       <p>{movie.description}</p>
-      {/* <p>Rating: {movie.rating}</p> */}
-      {/* Add more details as needed */}
     </div>
   );
 }
