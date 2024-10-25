@@ -1,0 +1,29 @@
+.card {
+    width: 256px;
+    height: 392px;
+    border-radius: 10px;
+}
+
+.img img {
+    width: 256px;
+    height: 344px;
+    border-radius: 10px;
+}
+
+.genre button {
+    width: auto;
+    padding: 2.5px 5px;
+    height: 35px;
+    background-color: #FF0000;
+    border-radius: 10px;
+    color: #FFFFFF;
+}
+
+.rec-btn button {
+    color: #FFFFFF;
+    border: 1px solid #FF0000;
+    border-radius: 10px;
+    width: auto;
+    padding: 5px 10px;
+    background-color: none;
+}
